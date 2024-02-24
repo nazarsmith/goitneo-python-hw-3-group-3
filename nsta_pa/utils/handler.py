@@ -100,8 +100,9 @@ def add_bd(book, args):
 def show_birthday(book, args):
     check_args(args, NoValue())
     contact = get_contact(book, args[0])
-    bd = str(contact.birthday)
+    bd = contact.birthday
     if bd:
+        bd = str(bd)
         return f"{args[0]}'s birthday: {bd}"
     return "No associated birthday date found."
 
