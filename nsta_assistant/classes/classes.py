@@ -2,8 +2,8 @@ from collections import UserDict
 import re
 import pickle
 from datetime import datetime
-from utils.utils import get_birthdays_per_week
-from .exceptions import WrongDate, NoValue
+from nsta_assistant.utils.utils import get_birthdays_per_week
+from nsta_assistant.classes.exceptions import WrongDate, NoValue
 
 
 class Field:

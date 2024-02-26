@@ -1,6 +1,11 @@
 from datetime import datetime
 import collections
-from classes.exceptions import WrongInfoException, WrongDate, NoValue, NoPhones
+from nsta_assistant.classes.exceptions import (
+    WrongInfoException,
+    WrongDate,
+    NoValue,
+    NoPhones,
+)
 
 
 def wrong_input_handling(function):
@@ -62,9 +67,14 @@ def check_args(args, exc: Exception):
         if len(args) == 2:
             raise ValueError("Please provide both old and new phone numbers.")
 
-        elif len(args) < 2:
+        elif 1 < len(args) < 2:
             raise ValueError(
                 "Neither old nor new phone number provided. Please try again."
+            )
+
+        elif len(args) <= 1:
+            raise ValueError(
+                "Please provide an account name, old and new phone numbers."
             )
 
 

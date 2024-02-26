@@ -1,10 +1,10 @@
 import random
-from classes.classes import (
+from nsta_assistant.classes.classes import (
     AddressBook,
     Record,
 )
-from classes.exceptions import WrongInfoException, WrongDate, NoValue
-from .utils import check_args, wrong_input_handling, get_contact
+from nsta_assistant.classes.exceptions import WrongInfoException, WrongDate, NoValue
+from nsta_assistant.utils.utils import check_args, wrong_input_handling, get_contact
 
 
 def greeting():
@@ -56,6 +56,7 @@ def change_contact(book: AddressBook, args):
 
 @wrong_input_handling
 def show_phone(book, args):
+    check_args(args, NoValue())
     contact = get_contact(book, args[0])
     found_phones = contact.list_str_rep(contact.phones)
     found_phones = "; ".join(found_phones)

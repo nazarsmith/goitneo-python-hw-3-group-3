@@ -1,4 +1,4 @@
-from utils.handler import (
+from nsta_assistant.utils.handler import (
     add_contact,
     show_all,
     change_contact,
@@ -11,8 +11,8 @@ from utils.handler import (
     num_records,
     greeting,
 )
-from utils.utils import parser
-from classes.classes import AddressBook
+from nsta_assistant.utils.utils import parser
+from nsta_assistant.classes.classes import AddressBook
 
 import pathlib
 import os
